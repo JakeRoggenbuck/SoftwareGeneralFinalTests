@@ -12,8 +12,13 @@ class Team():
 
 
 class Match(Team):
-    pass
+    def __init__(self, balls=None):
+        self.balls = balls
 
 
 class Calculations(Team):
-    pass
+    def __init__(self):
+        self._matches = []
+
+    def add_match(self, match):
+        self._matches.append(match)

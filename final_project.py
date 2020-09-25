@@ -22,3 +22,18 @@ class Calculations(Team):
 
     def add_match(self, match):
         self._matches.append(match)
+
+    def get_average_balls(self):
+        total = 0
+        for match in self._matches:
+            total = total + match.balls
+        return total/len(self._matches)
+
+def main():
+    calc = Calculations()
+    while True:
+        ans = input("")
+        if ans == 1:
+            break
+        calc.add_match(Match(int(ans)))
+    print("result " + str(calc.get_average_balls()))

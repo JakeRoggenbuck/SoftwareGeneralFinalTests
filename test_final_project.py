@@ -57,9 +57,14 @@ class MyTestCase(unittest.TestCase):
 
         match = final_project.Match()
         match.number = 10
-        match.balls
+        match.balls = 12
         calc.add_match(match)
 
+        match = final_project.Match(balls=1)
+        calc.add_match(match)
+
+        number = calc.get_average_balls()
+        self.assertEqual(number, 6.5, "avarge is right")
 
 
 if __name__ == "__main__":

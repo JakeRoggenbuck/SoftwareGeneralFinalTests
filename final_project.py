@@ -10,6 +10,14 @@ class Team():
     def print_display_info(self):
         print(self.get_display_info())
 
+    @property
+    def number(self):
+        return self._number
+
+    @number.setter
+    def number(self, value):
+        self._number = value
+
 
 class Match(Team):
     def __init__(self, balls=None):
@@ -29,11 +37,16 @@ class Calculations(Team):
             total = total + match.balls
         return total/len(self._matches)
 
+
 def main():
     calc = Calculations()
     while True:
-        ans = input("")
-        if ans == 1:
+        ans = input("Enter number, -1 for quit: ")
+        if ans == "-1":
             break
         calc.add_match(Match(int(ans)))
     print("result " + str(calc.get_average_balls()))
+
+
+if __name__ == "__main__":
+    main()

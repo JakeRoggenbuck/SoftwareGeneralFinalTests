@@ -7,6 +7,19 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(True, "loaded the module")
         team = final_project.Team()
 
+    def test_team_attributes(self):
+        import final_project
+        self.assertTrue(True, "loaded module")
+        team = final_project.Team()
+
+        team.number = 1678
+        team.name = "Citrus"
+        team.rookie_year = 2005
+
+        self.assertEqual(team.number, 1678, "got the team number")
+        self.assertEqual(team.name, "Citrus", "got the team name")
+        self.assertEqual(team.rookie_year, 2005, "got the team rookie year")
+
     def test_match_class(self):
         import final_project
         match = final_project.Match()

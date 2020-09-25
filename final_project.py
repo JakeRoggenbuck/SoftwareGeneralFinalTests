@@ -4,3 +4,7 @@ class Team():
 
 class Match(Team):
     pass
+
+
+class Calculations(Team):
+    pass

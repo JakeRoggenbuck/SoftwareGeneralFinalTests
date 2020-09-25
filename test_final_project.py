@@ -21,6 +21,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_info_string(self):
         team = self.setup_team()
+        team.number = 1678
         output = team.get_display_info()
         self.assertEqual(output, "team number is 1678")
         team.print_display_info()
